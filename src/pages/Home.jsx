@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import '../styles/home-hero.css';
 import SpectralTiles from '../components/SpectralTiles.jsx';
 import Icon from '../components/Icon.jsx';
@@ -75,32 +76,50 @@ function Head({ id, eyebrow, title, to }) {
 }
 
 function Categories() {
+  const [activeCategory, setActiveCategory] = useState(0);
+
   return (
-    <section className="fs" aria-labelledby="cat-title">
+    <section className="fs fcat-section" aria-labelledby="cat-title">
       <div className="container">
         <Head id="cat-title" eyebrow="A world of little treasures" title="Find your kind of beautiful" />
-        <ul className="fcat">
-          {CATEGORIES.map((c, i) => (
-            <Reveal as="li" key={c.key} delay={i * 90}>
-              <Link to={`/collections/${c.key}`}>
-                <span className="fcat-img">
-                  <img
-                    src={img(c.image, 420, 520, c.crop)}
-                    srcSet={srcSet(c.image, 420, 520, c.crop)}
-                    sizes="(max-width: 700px) 45vw, 280px"
-                    width="420"
-                    height="520"
-                    loading="lazy"
-                    alt=""
-                  />
-                </span>
-                <span className="fcat-name">
-                  {c.cardTitle} <Icon name="arrow" />
-                </span>
-              </Link>
-            </Reveal>
-          ))}
-        </ul>
+        <div className="fcat-accordion" aria-label="Explore jewellery categories">
+          {CATEGORIES.map((c, i) => {
+            const active = activeCategory === i;
+            return (
+              <article className={`fcat-panel${active ? ' is-active' : ''}`} key={c.key}>
+                <button
+                  className="fcat-trigger"
+                  type="button"
+                  aria-expanded={active}
+                  aria-controls={`category-panel-${i}`}
+                  onClick={() => setActiveCategory(i)}
+                >
+                  <span className="fcat-img">
+                    <img
+                      src={img(c.image, 720, 900, c.crop)}
+                      srcSet={srcSet(c.image, 720, 900, c.crop)}
+                      sizes="(max-width: 700px) 70vw, 34vw"
+                      width="720"
+                      height="900"
+                      loading={i < 2 ? 'eager' : 'lazy'}
+                      alt=""
+                    />
+                  </span>
+                  <span className="fcat-vertical-label">{c.label}</span>
+                  <span className="fcat-expanded-copy" id={`category-panel-${i}`}>
+                    <span className="fcat-kicker">The collection</span>
+                    <strong>{c.cardTitle}</strong>
+                    <span className="fcat-description">A little detail. A lasting impression.</span>
+                  </span>
+                </button>
+                <Link className="fcat-cta" to={`/collections/${c.key}`} aria-label={`Explore ${c.label}`}>
+                  Explore <Icon name="arrow" />
+                </Link>
+              </article>
+            );
+          })}
+        </div>
+        <p className="fcat-hint">Tap a category to discover more <span aria-hidden="true">↗</span></p>
       </div>
     </section>
   );

@@ -5828,6 +5828,10 @@ body {
   font-size: 1.05rem;
 }
 
+.fcat-swipe-hint {
+  display: none;
+}
+
 .product-card {
   min-width: 0;
   background: transparent;
@@ -5880,6 +5884,18 @@ body {
     margin-top: .35rem;
     font-size: .62rem;
   }
+  .fcat-swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .4rem;
+    margin: -.35rem 0 .65rem;
+    color: var(--wine-600);
+    font: 600 .62rem/1.3 var(--font-body);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .fcat-swipe-hint .icon { width: 14px; height: 14px; }
   .fcat {
     display: flex;
     overflow-x: auto;

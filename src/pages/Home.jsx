@@ -79,6 +79,9 @@ function Categories() {
     <section className="fs" aria-labelledby="cat-title">
       <div className="container">
         <Head id="cat-title" eyebrow="A world of little treasures" title="Find your kind of beautiful" />
+        <p className="fcat-swipe-hint">
+          Swipe to explore <Icon name="arrow" />
+        </p>
         <ul className="fcat">
           {CATEGORIES.map((c, i) => (
             <Reveal as="li" key={c.key} delay={i * 90}>

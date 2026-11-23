@@ -258,3 +258,35 @@
     object-position: 57% 18%;
   }
 }
+
+
+/* Ensure the primary shop action remains inside the clipped mobile hero. */
+@media (max-width: 520px) {
+  .fh.st {
+    min-height: 820px;
+  }
+
+  .fh.st .fh-grid.container {
+    min-height: 820px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .fh.st .fh-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 0.25rem;
+  }
+
+  .fh.st .fh-copy .btn {
+    display: inline-flex;
+    position: relative;
+    z-index: 6;
+    flex: none;
+    width: 100%;
+    min-height: 54px;
+    margin-top: 1.15rem;
+    visibility: visible;
+  }
+}

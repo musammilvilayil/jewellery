@@ -5872,6 +5872,7 @@ body {
   html { scroll-padding-top: 76px; }
   .container { width: min(100% - 2rem, var(--container)); }
   .fs { padding: 2.8rem 0; }
+  .footer-brand img { width: 90px; }
   .fs-head {
     align-items: flex-start;
     flex-direction: row;

@@ -1,3 +1,4 @@
+import '../styles/home-hero.css';
 import SpectralTiles from '../components/SpectralTiles.jsx';
 import Icon from '../components/Icon.jsx';
 import ProductGrid from '../components/ProductGrid.jsx';

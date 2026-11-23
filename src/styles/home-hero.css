@@ -196,3 +196,65 @@
     transform: none !important;
   }
 }
+
+
+/* Mobile refinement: keep the portrait clear and anchor the message at the foot. */
+@media (max-width: 520px) {
+  .fh.st {
+    min-height: clamp(620px, calc(100svh - 150px), 720px);
+  }
+
+  .fh.st .fh-grid.container {
+    min-height: inherit;
+    align-items: flex-end;
+    padding: 0 1.2rem 1.65rem;
+  }
+
+  .fh.st .fh-copy {
+    width: 100%;
+    max-width: 100%;
+    margin-top: auto;
+    padding: 0;
+  }
+
+  .fh.st .fh-eyebrow {
+    margin-bottom: 0.8rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+  }
+
+  .fh.st .fh-copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.55rem, 10.5vw, 3.35rem);
+    line-height: 0.98;
+  }
+
+  .fh.st .fh-sub {
+    max-width: 100%;
+    margin-top: 0.8rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .fh.st .fh-copy .btn {
+    min-height: 50px;
+    margin-top: 1rem;
+    padding-inline: 1rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+  }
+
+  .fh.st .fh-visual::after {
+    background: linear-gradient(
+      180deg,
+      rgba(30, 8, 12, 0.02) 0%,
+      rgba(30, 8, 12, 0.04) 34%,
+      rgba(30, 8, 12, 0.48) 53%,
+      rgba(30, 8, 12, 0.96) 100%
+    );
+  }
+
+  .fh.st .fh-visual img {
+    object-position: 57% 18%;
+  }
+}

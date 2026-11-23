@@ -4099,6 +4099,7 @@ main {
   }
 
   .topbar {
+    display: none;
     font-size: 0.6rem;
     letter-spacing: 0.14em;
   }

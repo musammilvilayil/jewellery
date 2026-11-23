@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import '../styles/home-hero.css';
 import SpectralTiles from '../components/SpectralTiles.jsx';
 import Icon from '../components/Icon.jsx';
@@ -6,7 +7,7 @@ import { CATEGORIES, PRODUCTS, isBest, newestFirst } from '../data/products.js';
 import { SITE } from '../data/site.js';
 import { Reveal, SplitHeading } from '../lib/motion.jsx';
 import { Link } from '../lib/router.jsx';
-import { img, srcSet, whatsappUrl } from '../lib/utils.js';
+import { img, prefersReducedMotion, srcSet, whatsappUrl } from '../lib/utils.js';
 
 // Home page, laid out to the Figma design. Every product and category comes from the store data.
 
@@ -16,6 +17,24 @@ const bestSellers = PRODUCTS.filter(isBest).slice(0, 4);
 const newArrivals = newestFirst().slice(0, 4);
 
 function Hero() {
+  const videoRef = useRef(null);
+
+  // Play only while the hero is on screen; people who prefer reduced motion get the still frame.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return undefined;
+    if (prefersReducedMotion()) {
+      v.pause();
+      return undefined;
+    }
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) v.play().catch(() => {});
+      else v.pause();
+    });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <SpectralTiles as="section" className="fh" background="#641c23" colors={['#f1d36d', '#d4707e', '#e8975a']} aria-labelledby="hero-title">
       <div className="container fh-grid">
@@ -39,13 +58,14 @@ function Hero() {
         </div>
         <div className="fh-visual">
           <video
+            ref={videoRef}
             className="fh-video"
             autoPlay
             muted
             loop
             playsInline
-            poster="/hero/hero.jpg"
-            preload="metadata"
+            poster="/hero/hero-poster.jpg"
+            preload="auto"
             aria-label="Jewellery editorial video"
           >
             <source src="/hero/hero.trimmed.mp4" type="video/mp4" />

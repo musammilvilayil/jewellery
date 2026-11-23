@@ -48,7 +48,7 @@ function Hero() {
             preload="metadata"
             aria-label="Jewellery editorial video"
           >
-            <source src="/hero/hero.mp4" type="video/mp4" />
+            <source src="/hero/hero.trimmed.mp4" type="video/mp4" />
           </video>
           <span className="fh-vertical" aria-hidden="true">
             The Heritage Edit — {new Date().getFullYear()}

@@ -5885,7 +5885,36 @@ main {
 
 @media (max-width: 960px) {
   .fh {
-    min-height: clamp(560px, calc(100svh - 200px), 720px);
+    min-height: 0;
+    height: 100svh;
+    max-height: 900px;
+    aspect-ratio: 9 / 16;
+  }
+
+  .fh-grid.container {
+    position: absolute;
+    inset: 0;
+  }
+
+  .fh-visual {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    opacity: 1;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.18) 12%, #000 38%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.18) 12%, #000 38%);
+  }
+
+  .fh-visual::after {
+    background: linear-gradient(90deg, rgba(16, 9, 7, 0.72) 0%, rgba(16, 9, 7, 0.18) 38%, transparent 68%);
+  }
+
+  .fh-copy {
+    width: 52%;
+    padding: 2rem 0 2.5rem 1.25rem;
   }
 }
 
@@ -5901,8 +5930,8 @@ main {
 
 @media (max-width: 960px) {
   .fh-visual {
-    left: 1.5%;
-    right: -1.5%;
+    left: 0;
+    right: 0;
   }
 
   .fh-visual img {
@@ -5923,7 +5952,8 @@ main {
 
 @media (max-width: 960px) {
   .fh-video {
-    object-position: 68% 40%;
-    transform: translateX(2.5%);
+    object-fit: cover;
+    object-position: 72% 50%;
+    transform: none;
   }
 }

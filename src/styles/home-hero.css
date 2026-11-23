@@ -187,3 +187,47 @@
 @media (prefers-reduced-motion: reduce) {
   .fh.st .enter { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
+
+
+/* Contrast correction: keep hero copy readable over bright video/image frames. */
+.fh.st .fh-copy {
+  text-shadow: 0 2px 18px rgba(20, 4, 7, .62);
+}
+.fh.st .fh-copy h1 {
+  color: #fffaf2;
+  text-shadow: 0 3px 24px rgba(15, 2, 5, .58);
+}
+.fh.st .fh-copy h1 em {
+  color: #f0d18d;
+}
+.fh.st .fh-sub {
+  color: #fffaf2;
+  text-shadow: 0 2px 12px rgba(15, 2, 5, .75);
+}
+@media (max-width: 960px) {
+  .fh.st .fh-visual::after {
+    background:
+      linear-gradient(180deg,
+        rgba(25, 5, 9, .32) 0%,
+        rgba(25, 5, 9, .38) 34%,
+        rgba(25, 5, 9, .64) 58%,
+        rgba(25, 5, 9, .88) 100%);
+  }
+  .fh.st .fh-eyebrow {
+    color: #f3d995;
+    text-shadow: 0 2px 10px rgba(15, 2, 5, .9);
+  }
+}
+@media (max-width: 520px) {
+  .fh.st .fh-copy {
+    text-shadow: 0 2px 16px rgba(15, 2, 5, .75);
+  }
+  .fh.st .fh-visual::after {
+    background:
+      linear-gradient(180deg,
+        rgba(25, 5, 9, .22) 0%,
+        rgba(25, 5, 9, .34) 30%,
+        rgba(25, 5, 9, .62) 52%,
+        rgba(25, 5, 9, .9) 100%);
+  }
+}

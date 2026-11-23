@@ -57,11 +57,6 @@ export default function App() {
       <a className="skip-link" href="#main" onClick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>
         Skip to main content
       </a>
-      <div className="topbar">
-        <p>
-          A little luxury, delivered with love. <span className="topbar-extra">Order easily on WhatsApp.</span>
-        </p>
-      </div>
       <Header />
       <AnimatePresence mode="wait" initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
         <motion.main

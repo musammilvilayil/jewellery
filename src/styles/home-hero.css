@@ -103,18 +103,6 @@
   object-fit: cover;
   object-position: center;
 }
-.fh.st .fh-vertical {
-  position: absolute;
-  right: 2rem;
-  bottom: 2rem;
-  z-index: 3;
-  color: rgba(255,250,241,.8);
-  font-size: .62rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-}
-
 @media (max-width: 960px) {
   .fh.st {
     min-height: clamp(650px, calc(100svh - 180px), 760px);
@@ -174,7 +162,6 @@
     background: linear-gradient(180deg, rgba(30,8,12,.02) 0%, rgba(30,8,12,.04) 30%, rgba(30,8,12,.34) 53%, rgba(30,8,12,.96) 100%);
   }
   .fh.st .fh-visual img { object-position: 58% 30%; }
-  .fh.st .fh-vertical { display: none; }
 }
 @media (max-width: 520px) {
   .fh.st { min-height: clamp(650px, calc(100svh - 180px), 740px); }

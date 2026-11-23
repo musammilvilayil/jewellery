@@ -50,32 +50,9 @@ function Hero() {
           >
             <source src="/hero/hero.trimmed.mp4" type="video/mp4" />
           </video>
-          <span className="fh-vertical" aria-hidden="true">
-            The Heritage Edit — {new Date().getFullYear()}
-          </span>
         </div>
       </div>
     </SpectralTiles>
-  );
-}
-
-const PROMISES = [
-  { icon: 'chat', text: 'Personal service on WhatsApp', to: '/faq' },
-  { icon: 'truck', text: 'Delivery confirmed with you', to: '/shipping' },
-  { icon: 'shield', text: 'Returns & exchanges', to: '/returns' },
-];
-
-function PromiseStrip() {
-  return (
-    <ul className="promise">
-      {PROMISES.map((p) => (
-        <li key={p.text}>
-          <Link to={p.to}>
-            <Icon name={p.icon} /> {p.text}
-          </Link>
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -253,7 +230,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <PromiseStrip />
       <Categories />
       <Shelf id="new-title" eyebrow="New chapters, timeless charm" title="Just arrived, forever loved" to="/shop?view=new" products={newArrivals} />
       <Signature />

@@ -524,27 +524,6 @@ main:focus {
   color: var(--gold-300);
 }
 
-/* ---------- Top bar ---------- */
-.topbar {
-  padding: 0.55rem 1rem;
-  background: var(--wine-950);
-  color: var(--gold-200);
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.topbar p {
-  margin: 0;
-}
-
-.topbar-sep {
-  margin: 0 0.9em;
-  opacity: 0.6;
-}
-
 /* ---------- Masthead: nav left, centred logo, actions right ---------- */
 .site-header {
   position: sticky;
@@ -4098,17 +4077,6 @@ main {
     width: min(100% - 2rem, var(--container));
   }
 
-  .topbar {
-    display: none;
-    font-size: 0.6rem;
-    letter-spacing: 0.14em;
-  }
-
-  .topbar-extra,
-  .topbar-sep {
-    display: none;
-  }
-
   .icon-btn {
     width: 40px;
     height: 40px;
@@ -4767,15 +4735,6 @@ main {
    These rules follow the Figma Make design and override earlier ones.
    ========================================================= */
 
-.topbar {
-  padding: 0.5rem 1rem;
-  background: var(--wine-900);
-  color: var(--gold-300);
-  font: 500 0.78rem/1.4 var(--font-body);
-  letter-spacing: 0.04em;
-  text-transform: none;
-}
-
 /* Header: search left, logo centre, account / wishlist / bag right, cream nav strip beneath */
 .site-header {
   background: var(--wine-700);
@@ -5009,45 +4968,6 @@ main {
 
 .fh-visual img.is-active {
   opacity: 1;
-}
-
-.fh-vertical {
-  position: absolute;
-  right: 1.2rem;
-  bottom: 1.5rem;
-  z-index: 1;
-  writing-mode: vertical-rl;
-  font: 500 0.64rem/1 var(--font-body);
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold-300);
-}
-
-/* Promise strip */
-.promise {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.8rem 3.5rem;
-  padding: 1.3rem 1rem;
-  background: var(--ivory);
-  border-bottom: 1px solid var(--line);
-}
-
-.promise a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font: 500 0.72rem/1 var(--font-body);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--wine-700);
-}
-
-.promise .icon {
-  width: 18px;
-  height: 18px;
 }
 
 /* Section headings */
@@ -5532,12 +5452,6 @@ main {
 }
 
 @media (max-width: 640px) {
-  .promise {
-    justify-content: flex-start;
-    gap: 0.9rem 1.6rem;
-    padding: 1rem 1.25rem;
-  }
-
   .bag-btn {
     padding: 0;
   }
@@ -5594,10 +5508,6 @@ main {
   z-index: 1;
   pointer-events: none;
   background: linear-gradient(180deg, rgba(100, 28, 35, 0.25), transparent 30%, transparent 70%, rgba(100, 28, 35, 0.55));
-}
-
-.fh-vertical {
-  z-index: 3;
 }
 
 /* Frosted tiles lit from below by slowly drifting light, kept very low in opacity */
@@ -5678,9 +5588,6 @@ main {
     mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.7) 45%, transparent 100%);
   }
 
-  .fh-vertical {
-    display: none;
-  }
 }
 
 /* Single hero photo, pinned to the right and faded into the burgundy */
@@ -5996,17 +5903,6 @@ body {
   .fsig-media { aspect-ratio: 4 / 5; }
   .fsig-copy { padding: 2.5rem 1rem; }
   .fsig-copy h2 { font-size: clamp(2rem, 9vw, 2.8rem); }
-  .promise {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: .7rem;
-    padding: 1rem;
-  }
-  .promise li a {
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-  }
   body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
   .bottom-nav {
     padding-bottom: env(safe-area-inset-bottom);

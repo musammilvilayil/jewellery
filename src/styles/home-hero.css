@@ -386,3 +386,20 @@
     object-fit: cover;
   }
 }
+
+
+/* Mobile: anchor hero copy closer to the bottom to remove the oversized empty gap. */
+@media (max-width: 960px) {
+  .fh.st .fh-grid.container {
+    display: block;
+  }
+  .fh.st .fh-copy {
+    position: absolute;
+    left: max(1.15rem, env(safe-area-inset-left));
+    right: max(1.15rem, env(safe-area-inset-right));
+    bottom: clamp(2.25rem, 6vh, 3.5rem);
+    width: auto;
+    max-width: 520px;
+    margin: 0;
+  }
+}

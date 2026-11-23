@@ -38,15 +38,18 @@ function Hero() {
           </Link>
         </div>
         <div className="fh-visual">
-          <img
-            src="/hero/hero.jpg"
-            srcSet="/hero/hero-900.jpg 900w, /hero/hero.jpg 1472w"
-            sizes="(max-width: 960px) 100vw, 70vw"
-            width="736"
-            height="981"
-            fetchPriority="high"
-            alt="Woman in profile wearing a ruby and diamond earring and pendant necklace"
-          />
+          <video
+            className="fh-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/hero/hero.jpg"
+            preload="metadata"
+            aria-label="Jewellery editorial video"
+          >
+            <source src="/hero/hero.mp4" type="video/mp4" />
+          </video>
           <span className="fh-vertical" aria-hidden="true">
             The Heritage Edit — {new Date().getFullYear()}
           </span>

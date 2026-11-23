@@ -5865,3 +5865,65 @@ main {
 .fh-visual {
   z-index: 2;
 }
+
+/* Hero fits the first screen: announcement bar + header + nav strip + hero = one viewport */
+.fh {
+  min-height: clamp(520px, calc(100svh - 225px), 800px);
+}
+
+.fh-copy {
+  padding-block: 2rem;
+}
+
+.fh h1 {
+  font-size: clamp(2.6rem, 4.4vw, 4.2rem);
+}
+
+.fh-sub {
+  margin: 1.2rem 0 1.8rem;
+}
+
+@media (max-width: 960px) {
+  .fh {
+    min-height: clamp(560px, calc(100svh - 200px), 720px);
+  }
+}
+
+/* Keep the jewellery subject slightly to the right on every screen size */
+.fh-visual {
+  right: -1.5%;
+}
+
+.fh-visual img {
+  object-position: 62% 50%;
+  transform: translateX(1.5%);
+}
+
+@media (max-width: 960px) {
+  .fh-visual {
+    left: 1.5%;
+    right: -1.5%;
+  }
+
+  .fh-visual img {
+    object-position: 68% 40%;
+    transform: translateX(2.5%);
+  }
+}
+
+.fh-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 50%;
+  transform: translateX(1.5%);
+}
+
+@media (max-width: 960px) {
+  .fh-video {
+    object-position: 68% 40%;
+    transform: translateX(2.5%);
+  }
+}
